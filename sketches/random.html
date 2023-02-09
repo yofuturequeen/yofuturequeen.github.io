@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <title>Trippy Bear</title>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+    <script>
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+        }
+
+        function draw() {
+  
+            var centerX = (width / 2);
+            var centerY = (height / 2); 
+            
+            // sun rays
+            for (var x = 0; x <= width; x += 100) {
+                fill(255, random(246), random(115))
+                strokeWeight(random(15))
+                circle(0, 0, 300)
+                quad(0, 0, x, height, x + 30, height, 0, 0)
+            }
+            
+            for (var y = 0; y <= height; y += 100) {
+                fill(255, random(246), random(115))
+                quad(0, 0, width, y, width, y + 30, 0, 0)
+                circle(0, 0, 300)
+            }
+            
+            // arms
+            fill(167, 141, 119);
+            
+            ellipse(centerX + 70, centerY + 50, 90, 40);
+            ellipse(centerX + 180, centerY + 50, 90, 40);
+            
+            // legs
+            ellipse(centerX + 80, centerY + 200, 40, 90);
+            ellipse(centerX + 170, centerY + 200, 40, 90);
+            
+            // dress
+            fill(0, random(167), random(156))
+            triangle(centerX + 25, centerY + 200, centerX + 225, centerY + 200, centerX + 125, centerY - 50);
+            
+            // ears
+            fill(167, 141, 119);
+            circle(centerX + 175, centerY - 150, 60);
+            circle(centerX + 75, centerY - 150, 60);
+            
+            fill(223, 201, 175);
+            circle(centerX + 175, centerY - 150, 30);
+            circle(centerX + 75, centerY - 150, 30);
+            
+            //head
+            fill(167, 141, 119);
+            ellipse(centerX + 125, centerY - 70, 220, 170);
+            
+            // eyes
+            fill(250);
+            circle(centerX + 160, centerY - 100, 23);
+            circle(centerX + 90, centerY - 100, 23);
+            
+            fill(0);
+            circle(centerX + 162, centerY - 102, 8);
+            circle(centerX + 92, centerY - 102, 8);
+            
+            // nose
+            ellipse(centerX + 125, centerY - 60, 40, 20);
+            
+            // mouth
+            curve(centerX + 110, centerY - 50, centerX + 115, centerY - 30, centerX + 135, centerY - 30, centerX + 140, centerY - 50);
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+    </script>
+  </head>
+</html>

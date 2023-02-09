@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <title>Alien Bear</title>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+    <script>
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+        }
+
+        function draw() {
+  
+            var centerX = (width / 2);
+            var centerY = (height / 2) - 200;
+            
+            // centerX - 200
+            // centerY - 200
+            background(255);
+            
+            if (mouseIsPressed === true) {
+                fill(255, 255, random(100));
+                quad(centerX + 100, centerY - 50, centerX - 50, centerY + 600, centerX + 300, centerY + 600, centerX + 150, centerY - 50);
+            }
+
+            
+            // ufo
+            fill(35, 73, 102);
+            ellipse(mouseX, mouseY + 15, 80, 70)
+            
+            fill(161, 183, 199);
+            circle(mouseX, mouseY - 25, 100)
+            
+            fill(88, 173, 237);
+            ellipse(mouseX, mouseY, 300, 50)
+            
+            // ufo lights 
+            fill(random(255), 251, 0);
+            for (let x = 0; x <= 200; x += 50) {
+                ellipse(mouseX + x - 100, mouseY, 20, 10)
+            }
+            
+            // arms
+            fill(167, 141, 119);
+            
+            ellipse(centerX + 70, centerY + 250, 90, 40);
+            ellipse(centerX + 180, centerY + 250, 90, 40);
+            
+            // legs
+            ellipse(centerX + 80, centerY + 400, 40, 90);
+            ellipse(centerX + 170, centerY + 400, 40, 90);
+            
+            // dress
+            fill(119, 167, 156);
+            triangle(centerX + 25, centerY + 400, centerX + 225, centerY + 400, centerX + 125, centerY + 50);
+            
+            // ears
+            fill(167, 141, 119);
+            circle(centerX + 175, centerY + 50, 60);
+            circle(centerX + 75, centerY + 50, 60);
+            
+            fill(223, 201, 175);
+            circle(centerX + 175, centerY + 50, 30);
+            circle(centerX + 75, centerY + 50, 30);
+            
+            //head
+            fill(167, 141, 119);
+            ellipse(centerX + 125, centerY + 130, 220, 170);
+            
+            // eyes
+            fill(250);
+            circle(centerX + 160, centerY + 100, 23);
+            circle(centerX + 90, centerY + 100, 23);
+            
+            fill(0);
+            circle(centerX + 162, centerY + 98, 8);
+            circle(centerX + 92, centerY + 98, 8);
+            
+            // nose
+            ellipse(centerX + 125, centerY + 140, 40, 20);
+            
+            // mouth
+            curve(centerX + 110, centerY + 150, centerX + 115, centerY + 170, centerX + 135, centerY + 170, centerX + 140, centerY + 150);
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+    </script>
+  </head>
+</html>

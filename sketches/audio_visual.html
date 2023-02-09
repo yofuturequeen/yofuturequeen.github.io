@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <title>Weather Bear</title>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/addons/p5.sound.js"></script>
+    <script>
+        let baby;
+        function preload() {
+            baby = loadSound("baby_bieber.mp3");
+        }
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+        }
+
+        function drawBabyGrid() {
+  
+            for (let x = 0; x < width; x += 200) {
+                fill(mouseX, mouseY, 100);
+                ellipse(80 + x, 130, 200, 180);
+
+                fill(0);
+                circle(50 + x, 100, 10);
+                circle(110 + x, 100, 10);
+
+                noFill();
+                curve(65 + x, 130, 70 + x, 150, 90 + x, 150, 95 + x, 130);
+
+                line(80 + x, 50, 80 + x, 10);
+
+                push();
+                noStroke();
+                fill(240, 210, 204);
+                ellipse(40 + x, 130, 20, 10);
+                ellipse(120 + x, 130, 20, 10);
+                pop();
+                
+                for (let y = 0; y < height; y += 150) {
+                    fill(mouseX, mouseY, 100);
+                    ellipse(80 + x, 130 + y, 200, 180);
+
+                    fill(0);
+                    circle(50 + x, 100 + y, 10);
+                    circle(110 + x, 100 + y, 10);
+
+                    noFill();
+                    curve(65 + x, 130 + y, 70 + x, 150 + y, 90 + x, 150 + y, 95 + x, 130 + y);
+
+                    line(80 + x, 50 + y, 80 + x, 10 + y);
+
+                    push();
+                    noStroke();
+                    fill(240, 210, 204);
+                    ellipse(40 + x, 130 + y, 20, 10);
+                    ellipse(120 + x, 130 + y, 20, 10);
+                    pop();
+                }
+            }
+        }
+
+        function draw() { 
+            let centerX = width / 2;
+            let centerY = (height / 2) - 100;
+            fill(255, 252, 224);
+            ellipse(centerX + 80, centerY + 30, 200, 180);
+            
+            fill(0);
+            circle(centerX + 50, centerY, 10);
+            circle(centerX + 110, centerY, 10);
+            
+            noFill();
+            curve(centerX + 65, centerY + 30, centerX + 70, centerY + 50, centerX + 90, centerY + 50, centerX + 95, centerY + 30);
+
+            line(centerX + 80, centerY - 50, centerX + 80, centerY - 90);
+            
+            push();
+            noStroke();
+            fill(240, 210, 204);
+            ellipse(centerX + 40, centerY + 30, 20, 10);
+            ellipse(centerX + 120, centerY + 30, 20, 10);
+            pop();
+            
+            if (mouseIsPressed && baby.isPlaying()) {
+                drawBabyGrid();
+            }
+        }
+
+        function mousePressed() {
+            if (baby.isPlaying()) {
+                baby.stop();
+                clear();
+            } else {
+                baby.play();
+            }
+        }
+    </script>
+  </head>
+</html>

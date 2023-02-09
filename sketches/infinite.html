@@ -1,0 +1,104 @@
+<html>
+  <head>
+    <title>Weather Bear</title>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+    <script>
+        var x = -50;
+        var movement = 3;
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+        }
+
+        function draw() {
+        
+            background(250);
+            
+            strokeWeight(0);
+            
+            if (movement > 0) {
+                for (let x = 0; x <= width; x += 100) {
+                    fill(255, 246, 115)
+                    strokeWeight(0)
+                    circle(0, 0, 300)
+                    quad(0, 0, x, height, x + 30, height, 0, 0)
+                }
+                for (var y = 0; y <= height; y += 100) {
+                    quad(0, 0, width, y, width, y + 30, 0, 0)
+                }
+            } else {
+                for (let i = 0; i <= width; i += 250) {
+                    fill(128, 183, 224);
+                    circle(i + 100, 80, 70);
+                    circle(i + 150, 80, 70);
+                    circle(i + 70, 120, 70);
+                    circle(i + 120, 120, 70);
+                    circle(i + 170, 120, 70);
+                }
+            }
+            
+            // arms
+            fill(167, 141, 119);
+            
+            ellipse(70 + x, 400, 90, 40);
+            ellipse(180 + x, 400, 90, 40);
+            
+            // legs
+            ellipse(80 + x, 550, 40, 90);
+            ellipse(170 + x, 550, 40, 90);
+            
+            // dress
+            fill(119, 167, 156);
+            triangle(25 + x, 550, 225 + x, 550, 125 + x, 200);
+            
+            // ears
+            fill(167, 141, 119);
+            circle(175 + x, 200, 60);
+            circle(75 + x, 200, 60);
+            
+            fill(223, 201, 175);
+            circle(175 + x, 200, 30);
+            circle(75 + x, 200, 30);
+            
+            //head
+            fill(167, 141, 119);
+            ellipse(125 + x, 280, 220, 170);
+            
+            // eyes
+            fill(250);
+            circle(160 + x, 250, 23);
+            circle(90 + x, 250, 23);
+            
+            fill(0);
+            circle(162 + x, 248, 8);
+            circle(92 + x, 248, 8);
+            
+            // nose
+            ellipse(125 + x, 290, 40, 20);
+            
+            // mouth
+            curve(110 + x, 300, 115 + x, 320, 135 + x, 320, 140 + x, 300);
+            
+            if (x >= width - 250) {
+                (movement = -5);
+            } else if (x < 0) {
+                (movement = 5);
+            } 
+
+            x = x + movement;
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+    </script>
+  </head>
+</html>
