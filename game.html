@@ -7,13 +7,48 @@
         <div class="page-container">
           <h1 class="header">MP2 Writeup</h1>
           <h2>Overview and Usage</h2>
-          <p></p>
+          <p>This game is called Strawberraroll. It features my favorite Sanrio character 
+            Cinnamaroll. Users play as Cinnamaroll to collect strawberries and flours to bake a 
+            cake. Don't collect the poison though! Or your game will be over. You can play my game 
+            <a href="">here</a>.<br><br>
+            <img class="picture4" src="./images/strawberraroll.gif"/> <br>
+          </p>
           <h2>Development and Process</h2>
-          <p></p>
+          <ul>
+            <b>Getting Started</b>
+            <li>Read up on p5 play library to understand features</li>
+            <li>Looked at example games to see what components I would need</li><br>
+            <b>Creating Bare Bones Game</b>
+            <li>Made Cinnamaroll move with mouse</li>
+            <li>Created strawberry object that would collect</li>
+            <li>Made background to look like it moves</li><br>
+            <b>Adding Details</b>
+            <li>Made strawberries appear randomly and move off screen</li>
+            <li>Added flour and poison</li>
+            <li>Created end condition for the game</li><br>
+            <b>Deploying</b>
+            <li>Transferred all files from web editor to VS code</li>
+            <li>Used web dev tools to run locally</li>
+            <li>Deployed game to github pages</li>
+          </ul>
+          <img class="picture4" src="/images/unfinished game.PNG">
           <h2>Issue Deep-Dive</h2>
-          <p></p>
+          <p>I ran into a lot of problems with this game. The most prominent issue having to do with 
+            removing objects once they've touched/overlapped. I think this issue had to do with logic 
+            as every time Cinnamaroll would overlap a strawberry, nothing would happen. I looked at tons 
+            of examples online and actually copied over the syntax from the reference to remove the strawberry. 
+            For the life of me, I could not figure out why it wouldn't work. I tried rewriting the code to accomplish 
+            this fundamental task at least 10 times. I would get errors like remove not being a function or the overlap 
+            simply not working which was really frusturating. Finally though, one of my methods worked and the 
+            strawberries would remove. Even now, I don't understand what I was doing wrong but at least it works!
+          </p>
           <h2>Ideas and Future Work</h2>
-          <p></p>
+          <ul>
+            <li>Add music and sound effects to game
+            </li>
+            <li>Create a number of cakes depending on user score</li>
+            <li>Make the game start easy and gradually get harder</li>
+          </ul>
           <h2>Kudos</h2>
           <p>For this assignment, 2 sites that were really helpful to use as reference were the <a href="https://p5play.org/learn/index.html">p5 play website</a>
              where they work through the necessary components to make a game and the other being Allison Parrish's <a href="https://creative-coding.decontextualize.com/making-games-with-p5-play/">Making Games with
