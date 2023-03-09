@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./index.css" />
+    </head>
+    <body>
+        <div class="page-container">
+          <h1 class="header">MP2 Writeup</h1>
+          <h2>Overview and Usage</h2>
+          <p>This game is my Strawberraroll Prototype. This is a prototype for my final project which means 
+            while it is functional, it doesn't have all the bells and whistles my final version will have. 
+            Since it builds off my original game, the prototype version contains some new functionality.
+            You can play my game prototype
+            <a href="https://yofuturequeen.github.io/strawberraroll_prototype/">here</a>.<br><br>
+            <img class="picture4" src="./images/cake_prototype.gif"/> <br>
+          </p>
+          <h2>Development and Process</h2>
+          <ul>
+            <b>Getting Started</b>
+            <li>Looked and played other peoples' games</li>
+            <li>Thought of future steps and qualities I could add to my game to improve it</li>
+            <li>Submitted proposal for final project</li><br>
+            <b>Small Alterations to Original Game</b>
+            <li>Replaced characters/images with basic sprites</li>
+            <li>Made the game full screen</li>
+            <li>Fixed the problem of original game where not all sprites would be collected</li><br>
+            <b>Adding New Functionality</b>
+            <li>Added sound: Sound effects for different events and game soundtrack</li>
+            <li>Created an animation of a cake being made and added it to end screen</li>
+            <li>Made it so game could be reset upon click rather than refresh</li><br>
+            <b>Deploying</b>
+            <li>Transferred all files from web editor to VS code</li>
+            <li>Used web dev tools to run locally</li>
+            <li>Deployed game to github pages</li>
+            <li>Fixed the bugs that came with deploying game</li>
+          </ul>
+          <img class="picture4" src="/images/unfinished prototype.PNG">
+          <h2>Issue Deep-Dive</h2>
+          <p>The biggest problem I ran into for this prototype version was getting all the functionality to work upon 
+            ending the game. An issue here was my animation only playing for a split second when the poison was touched. 
+            This is because the draw loop would continue meaning my animation would only play for one frame. I also tried 
+            to remove all sprites with end condition which didn't work properly either. This was a logic error and to fix 
+            this I created entirely different screens depending on which stage the user was on (start, in game, game over).
+          </p>
+          <h2>Ideas and Future Work</h2>
+          <ul>
+            <li>Add the background and all the characters and items back to the game</li>
+            <li>Use Firebase to add a log in to keep track of high scores</li>
+            <li>Add stylized text for game over and start screens</li>
+          </ul>
+          <h2>Further Questions</h2>
+          <h3>Project Scope</h3>
+          <p>For my final project I added the idea of adding Firebase to my game to advance my game and make it a bit more 
+            complex. I also added different screens depending on what stage of the game I'm on which is a new change for my final.
+            However, I don't think I will be able to add different characters unless I have ample time 
+            after completing all my other changes.
+          </p>
+          <h3>Time Management</h3>
+          <p>While I didn't neccessarily predict which issues I would run into, I knew I would run into a lot. I anticipated getting 
+            stuck quite often and that's exactly what happened. It felt like even making the smallest of changes would then turn me to a 
+            whole new set of problems which was really frustrating. Getting stuck on one small line of code for an entire work session 
+            definitely added more time to my completion as well.
+          </p>
+          <h3>Implementation Plan</h3>
+          <p>For my final version, besides the changes I listed above, I will also run my game on my web dev server much more often. One part 
+            of this process I found quite time consuming is debugging my deployments so I will be sure to run that more often and earlier.
+          </p>
+          <h2>Kudos</h2>
+          <p>For this assignment, I used similar references to my original game. The main site that was really helpful to use as reference was the <a href="https://p5play.org/learn/index.html">p5 play website</a>
+             where they work through the necessary components to make a game and load animations. There were also many games people have made that were available online that I used to point me in a certain direction. The 
+                example that was similar to my game that I used as reference can be found <a href="https://editor.p5js.org/amazingsupergirl98/sketches/v2gp7hzZ1">here</a>.
+          </p>
+        </div>
+    </body>
+</html>
